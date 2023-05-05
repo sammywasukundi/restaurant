@@ -51,17 +51,4 @@ class Employe
     {
         return $this->etatCivil;
     }
-    public function getRetenus()
-    {
-        return $this->retenus;
-    }
-
-
-    
-
-
-
-
-
-
 }
