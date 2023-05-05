@@ -1,14 +1,13 @@
 <?php
 class Employe
 {
-
     protected $nom;
     protected $prenom;
     protected $salaire;
     protected $sexe;
     protected $post;
     protected $etatCivil;
-    protected $retunus;
+    protected $retenus;
 
     public function __construct(
         string $nom,
@@ -25,7 +24,7 @@ class Employe
         $this->sexe = $sexe;
         $this->post = $post;
         $this->etatCivil = $etatCivil;
-        $this->retunus = $retenus;
+        $this->retenus = $retenus;
     }
 
     public function getNom()
@@ -52,4 +51,17 @@ class Employe
     {
         return $this->etatCivil;
     }
+    public function getRetenus()
+    {
+        return $this->retenus;
+    }
+
+
+    
+
+
+
+
+
+
 }
