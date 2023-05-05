@@ -139,7 +139,7 @@
             <div class="container">
                 <div class="row gy-4 align-items-center mt-0">
                     <div class="col-12 col-md-4 text-center">
-                        <h1 class="fw-bold mt-2 ">Le Bon goût</h1>
+                        <h1 class="fw-bold mt-2">Le Bon goût</h1>
                         <h2 class="fw-light mt-2">Bienvenue sur notre Site Web de réservation de répas en ligne</h2>
                         <h2 class="fw-light mt-2">Voulez-vous passer une commande ?</h2>
                     </div>
@@ -161,13 +161,13 @@
                                     <img src="images/carroussel/img_cuisine4.jpg" class="d-block w-100" alt="cuisinier">
                                     </div>
                                     <div class="carousel-item">
-                                    <img src="images/carroussel/img_cuisine3.jpg" class="d-block w-100" alt="cuisinier">
-                                    </div>
-                                    <div class="carousel-item">
                                     <img src="images/carroussel/img_cuisine5.jpg" class="d-block w-100" alt="cuisinier">
                                     </div>
                                     <div class="carousel-item">
                                     <img src="images/carroussel/img_cuisine6.jpg" class="d-block w-100" alt="cuisinier">
+                                    </div>
+                                    <div class="carousel-item">
+                                    <img src="images/carroussel/img_cuisine3.jpg" class="d-block w-100" alt="cuisinier">
                                     </div>
                                 </div>
                                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -219,7 +219,6 @@
                                                         <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-lock"></i></span>
                                                         <input type="text" class="form-control" placeholder="Password" aria-label="Username" aria-describedby="basic-addon1">
                                                     </div>
-
                                                     <div class="col-12 my-2">
                                                         <textarea name="message" class="form-control" id="message" rows="2" placeholder="Message"></textarea>
                                                     </div>

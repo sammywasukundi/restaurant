@@ -1,0 +1,29 @@
+body{
+    background-color:gray;
+   color:black;
+}
+body div{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-top: 10px;
+    border-bottom: 2px solid #000;
+}
+.inputC{
+    padding: 5px 10px;
+    margin: 5px 5px;
+    display: flex;
+    width: 200px;
+    border-radius: 5px;
+    border: 1px solid black;
+     color:black;
+}
+.btn{
+    width: 220px;
+    margin: 3px 5px;
+    font-size: 20px;
+    font-family:'Times New Roman', Times, serif;
+    color: black;
+    border-radius: 5px;
+    border: none;
+}
