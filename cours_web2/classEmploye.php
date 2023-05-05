@@ -52,4 +52,23 @@ class Employe
     {
         return $this->etatCivil;
     }
+// setter
+    public function setNom(){
+        return $this->nom = $nom;
+    }
+    public function setPostnom(){
+        return $this->prenom = $prenom;
+    }
+    public function setSalaire(){
+        return $this->salaire = $salaire;
+    }
+    public function setSexe(){
+        return $this->sexe = $sexe;
+    }
+    public function setPost(){
+        return $this->post = $post;
+    }
+    public function setEtatcivil(){
+        return $this->etatCivil = $etatCivil;
+    }
 }
