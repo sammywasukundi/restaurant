@@ -27,7 +27,7 @@
                                 <a class="nav-link text-decoration-none text-warning fs-5 fw-semibold border-end border-1" href="stock.php"><i class="fa-sharp fa-solid fa-basket-shopping"></i></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-decoration-none text-warning fs-5 fw-semibold border-end border-1" href="interface.php">Acceuil</a>
+                                <a class="nav-link text-decoration-none text-warning fs-5 fw-semibold border-end border-1" href="interface.php">Accueil</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-decoration-none text-warning fs-5 fw-semibold border-end border-1" href="produits.php">Produit</a>

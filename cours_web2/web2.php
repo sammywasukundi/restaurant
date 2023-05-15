@@ -1,3 +1,8 @@
+<?php 
+  session_start();
+  $_SESSION['prenom']='sam';
+  $_SESSION['nom']='douze';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,10 +15,8 @@
 <body>
 <?php
   
-  $var = 5;
-  if($var <= 5){
-    // echo 'jeanpierre';
-  }
+    echo '<p>'.$_SESSION['nom'].'</p>';
+    
 ?>
     <main class="wrapper">
         <section>

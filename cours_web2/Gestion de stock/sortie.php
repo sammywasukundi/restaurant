@@ -7,7 +7,11 @@
     <title>Document</title>
 </head>
 <body>
-    <?php require_once('menu.php');?>
+    <?php
+        require('connexion.php');
+        require_once('menu.php');
+        require('class.php');
+    ?>
     <main>
         <section class="py-5 bg-white">
             <div class="container py-4">
@@ -39,7 +43,20 @@
                         <form class="row mb-2" method="post" action="">
                             <legend class="text-warning">Sorties</legend>
                             <div class="col-12 my-2">
-                                <input name="id_product_sortie" type="text" placeholder="Id produit" class="form-control" required>
+                                <!-- <input name="id_product_sortie" type="text" placeholder="Id produit" class="form-control" required> -->
+                            <select name="id_produit" id="" class="form-control">
+                                <?php
+                                    $recup=$pdo->query("SELECT * FROM produit");
+                                     while($resultat = $recup->fetch()){
+                                ?>   
+                                    <option value="<?php echo $resultat['id_produit'];?>"><?php echo $resultat['nom_produit'];?></option>
+                                <?php
+                                    
+                                    }
+
+                                ?>
+
+                            </select>
                             </div>
                             <div class="col-12 my-2">
                                 <input name="Qnte_sortie" type="text" placeholder="Quantité des produits" class="form-control" required>
@@ -56,9 +73,8 @@
 </body>
 </html>
 <?php
-require_once('connexion.php');
     if(isset($_POST['submit'])){
-        $id_produit_sortie = $_POST['id_product_sortie'];
+        $id_produit_sortie = $_POST['id_produit'];
         $qnte_sortie = $_POST['Qnte_sortie'];
 
         $insertion = "INSERT INTO sortie (id_sortie,Qnte_sortie) VALUES($id_produit_sortie,$qnte_sortie)";
@@ -76,7 +92,9 @@ require_once('connexion.php');
         if ($d = $old->fetch()) {
             $v = $d['Qnte'] - $qnte_sortie ;
             # code...
+            $sortie_produit= new Produit($_POST['id_produit'],null,null,null,$_POST['Qnte_sortie']);
             $diminuer_stock=$pdo->query("UPDATE produit set Qnte = '$v' WHERE id_produit='$id_produit_sortie'");
+            $diminuer_stock=$sortie_produit->Diminuer_Qnte($_POST['Qnte_sortie']);
         }
    
     }

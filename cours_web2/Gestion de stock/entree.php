@@ -1,3 +1,7 @@
+<?php 
+    require_once('connexion.php');
+    require('class.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,7 +43,22 @@
                         <form class="row mb-2" method="post" action="">
                             <legend class="text-warning">Entrées</legend>
                             <div class="col-12 my-2">
-                                <input name="id_product_entree" type="text" placeholder="Id produit" class="form-control" required>
+                                <!-- <input name="id_product_entree" type="text" placeholder="Id produit" class="form-control" required> -->
+
+
+                                <select name="id_produit" id="" class="form-control" >
+                                    <?php
+                                        $selection = $pdo->query("SELECT * FROM produit");
+                                        while($res = $selection->fetch()){
+                                    ?> 
+                                            <option value="<?php echo $res['id_produit'];?>"><?php echo $res['nom_produit'];?></option>
+                                    <?php
+                                    
+                                        }
+
+                                    ?>
+                                </select>
+                                
                             </div>
                             <div class="col-12 my-2">
                                 <input name="Qnte_entree" type="text" placeholder="Quantité des produits" class="form-control" required>
@@ -56,9 +75,8 @@
 </body>
 </html>
 <?php
-require_once('connexion.php');
     if(isset($_POST['submit'])){
-        $id_produit_entree = $_POST['id_product_entree'];
+        $id_produit_entree = $_POST['id_produit'];
         $qnte_entree = $_POST['Qnte_entree'];
 
         $insertion = "INSERT INTO entree (nom_produit_entree,Qnte_entree) VALUES($id_produit_entree,$qnte_entree)";
@@ -74,9 +92,11 @@ require_once('connexion.php');
         $old=$pdo->query("SELECT Qnte FROM produit WHERE id_produit='$id_produit_entree'");
 
         if ($d = $old->fetch()) {
-            $v = $d['Qnte'] + $qnte_entree  ;
+            $v = $d['Qnte'] + $qnte_entree;
             # code...
+            $entree_produit= new Produit($_POST['id_produit'],null,null,null,$_POST['Qnte_entree']);
             $augmenter_stock=$pdo->query("UPDATE produit set Qnte = '$v' WHERE id_produit='$id_produit_entree' ");
+            $augmenter_stock=$entree_produit->Augmenter_Qnte($d['Qnte_entree']);
         }
    
     }
